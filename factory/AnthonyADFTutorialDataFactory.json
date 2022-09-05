@@ -1,0 +1,9 @@
+{
+	"name": "AnthonyADFTutorialDataFactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "42c281c8-3961-4f0e-8ed6-f48ad0325493",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}
