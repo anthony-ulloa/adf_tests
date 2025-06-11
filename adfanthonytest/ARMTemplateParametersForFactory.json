@@ -1,0 +1,82 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfanthonytest"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureFileStorage1_connectionString": {
+			"value": ""
+		},
+		"SalesforceTest_clientSecret": {
+			"value": ""
+		},
+		"Warehouse1_servicePrincipalCredential": {
+			"value": ""
+		},
+		"sinktest_connectionString": {
+			"value": ""
+		},
+		"sourcetest_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://staging2501090040007252.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_tenant": {
+			"value": "75d6ec8a-dd11-4d84-82d8-f1410034e6e8"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+			"value": "f55223ac-a96f-4d54-ba0e-c7785111ff93"
+		},
+		"SalesforceTest_properties_typeProperties_environmentUrl": {
+			"value": "https://orgfarm-7feebbd91d-dev-ed.develop.my.salesforce.com"
+		},
+		"SalesforceTest_properties_typeProperties_clientId": {
+			"value": "3MVG9dAEux2v1sLvuEhw73V1GJ2GyZRg5Wr5Q31yT5cUfqJxZtdrXVUlqTAixw.X0MjHQUnUMQ18MWxA_BwLV"
+		},
+		"Warehouse1_properties_typeProperties_endpoint": {
+			"value": "rlwnm5ir3wce3awy6faqanhg5a-wazmjmj7hxdezl2thn5ippcrb4.datawarehouse.fabric.microsoft.com"
+		},
+		"Warehouse1_properties_typeProperties_tenant": {
+			"value": "75d6ec8a-dd11-4d84-82d8-f1410034e6e8"
+		},
+		"Warehouse1_properties_typeProperties_servicePrincipalId": {
+			"value": "f55223ac-a96f-4d54-ba0e-c7785111ff93"
+		},
+		"sourcetest_properties_typeProperties_url": {
+			"value": "https://dataflowtests.dfs.core.windows.net/"
+		},
+		"sink_properties_privateLinkResourceId": {
+			"value": "/subscriptions/648c3944-7408-4e58-806f-85284f88ab72/resourceGroups/FabricRepros/providers/Microsoft.Sql/servers/anthonyfabricsql"
+		},
+		"sink_properties_groupId": {
+			"value": "sqlServer"
+		},
+		"sink_properties_fqdns": {
+			"value": [
+				"anthonyfabricsql.database.windows.net"
+			]
+		},
+		"stagingtest_properties_privateLinkResourceId": {
+			"value": "/subscriptions/648c3944-7408-4e58-806f-85284f88ab72/resourceGroups/FabricRepros/providers/Microsoft.Storage/storageAccounts/staging2501090040007252"
+		},
+		"stagingtest_properties_groupId": {
+			"value": "dfs"
+		},
+		"stagingtest_properties_fqdns": {
+			"value": [
+				"staging2501090040007252.dfs.core.windows.net"
+			]
+		}
+	}
+}

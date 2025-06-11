@@ -1,0 +1,227 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfanthonytest"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageLinkedService'"
+		},
+		"AzureDataLakeStorage1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureDataLakeStorage1'"
+		},
+		"AzureFileStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureFileStorage1'"
+		},
+		"SalesforceTest_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'SalesforceTest'"
+		},
+		"Warehouse1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'Warehouse1'"
+		},
+		"sinktest_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sinktest'"
+		},
+		"sourcetest_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sourcetest'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://staging2501090040007252.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "75d6ec8a-dd11-4d84-82d8-f1410034e6e8"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "f55223ac-a96f-4d54-ba0e-c7785111ff93"
+		},
+		"SalesforceTest_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://orgfarm-7feebbd91d-dev-ed.develop.my.salesforce.com"
+		},
+		"SalesforceTest_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "3MVG9dAEux2v1sLvuEhw73V1GJ2GyZRg5Wr5Q31yT5cUfqJxZtdrXVUlqTAixw.X0MjHQUnUMQ18MWxA_BwLV"
+		},
+		"Warehouse1_properties_typeProperties_endpoint": {
+			"type": "string",
+			"defaultValue": "rlwnm5ir3wce3awy6faqanhg5a-wazmjmj7hxdezl2thn5ippcrb4.datawarehouse.fabric.microsoft.com"
+		},
+		"Warehouse1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "75d6ec8a-dd11-4d84-82d8-f1410034e6e8"
+		},
+		"Warehouse1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "f55223ac-a96f-4d54-ba0e-c7785111ff93"
+		},
+		"sourcetest_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dataflowtests.dfs.core.windows.net/"
+		},
+		"sink_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/648c3944-7408-4e58-806f-85284f88ab72/resourceGroups/FabricRepros/providers/Microsoft.Sql/servers/anthonyfabricsql"
+		},
+		"sink_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
+		},
+		"sink_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"anthonyfabricsql.database.windows.net"
+			]
+		},
+		"stagingtest_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/648c3944-7408-4e58-806f-85284f88ab72/resourceGroups/FabricRepros/providers/Microsoft.Storage/storageAccounts/staging2501090040007252"
+		},
+		"stagingtest_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
+		"stagingtest_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"staging2501090040007252.dfs.core.windows.net"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfanthonytest_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorageLinkedService_connectionString": {
+						"value": "[parameters('AzureBlobStorageLinkedService_connectionString')]"
+					},
+					"AzureDataLakeStorage1_servicePrincipalCredential": {
+						"value": "[parameters('AzureDataLakeStorage1_servicePrincipalCredential')]"
+					},
+					"AzureFileStorage1_connectionString": {
+						"value": "[parameters('AzureFileStorage1_connectionString')]"
+					},
+					"SalesforceTest_clientSecret": {
+						"value": "[parameters('SalesforceTest_clientSecret')]"
+					},
+					"Warehouse1_servicePrincipalCredential": {
+						"value": "[parameters('Warehouse1_servicePrincipalCredential')]"
+					},
+					"sinktest_connectionString": {
+						"value": "[parameters('sinktest_connectionString')]"
+					},
+					"sourcetest_accountKey": {
+						"value": "[parameters('sourcetest_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"SalesforceTest_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('SalesforceTest_properties_typeProperties_environmentUrl')]"
+					},
+					"SalesforceTest_properties_typeProperties_clientId": {
+						"value": "[parameters('SalesforceTest_properties_typeProperties_clientId')]"
+					},
+					"Warehouse1_properties_typeProperties_endpoint": {
+						"value": "[parameters('Warehouse1_properties_typeProperties_endpoint')]"
+					},
+					"Warehouse1_properties_typeProperties_tenant": {
+						"value": "[parameters('Warehouse1_properties_typeProperties_tenant')]"
+					},
+					"Warehouse1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Warehouse1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"sourcetest_properties_typeProperties_url": {
+						"value": "[parameters('sourcetest_properties_typeProperties_url')]"
+					},
+					"sink_properties_privateLinkResourceId": {
+						"value": "[parameters('sink_properties_privateLinkResourceId')]"
+					},
+					"sink_properties_groupId": {
+						"value": "[parameters('sink_properties_groupId')]"
+					},
+					"sink_properties_fqdns": {
+						"value": "[parameters('sink_properties_fqdns')]"
+					},
+					"stagingtest_properties_privateLinkResourceId": {
+						"value": "[parameters('stagingtest_properties_privateLinkResourceId')]"
+					},
+					"stagingtest_properties_groupId": {
+						"value": "[parameters('stagingtest_properties_groupId')]"
+					},
+					"stagingtest_properties_fqdns": {
+						"value": "[parameters('stagingtest_properties_fqdns')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adfanthonytest_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfanthonytest_ArmTemplate_0')]"
+			]
+		}
+	]
+}
