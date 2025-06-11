@@ -1,0 +1,16 @@
+{
+	"name": "SalesforceObject1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SalesforceTest",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SalesforceV2Object",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": "fabricload__c"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

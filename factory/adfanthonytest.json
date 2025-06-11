@@ -1,0 +1,9 @@
+{
+	"name": "adfanthonytest",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fcffcf02-eea8-4380-85f0-8afa087b47a9",
+		"tenantId": "75d6ec8a-dd11-4d84-82d8-f1410034e6e8"
+	}
+}

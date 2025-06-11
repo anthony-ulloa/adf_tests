@@ -1,0 +1,10 @@
+{
+	"name": "sink",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/648c3944-7408-4e58-806f-85284f88ab72/resourceGroups/FabricRepros/providers/Microsoft.Sql/servers/anthonyfabricsql",
+		"groupId": "sqlServer",
+		"fqdns": [
+			"anthonyfabricsql.database.windows.net"
+		]
+	}
+}

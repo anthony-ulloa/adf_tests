@@ -1,0 +1,10 @@
+{
+	"name": "stagingtest",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/648c3944-7408-4e58-806f-85284f88ab72/resourceGroups/FabricRepros/providers/Microsoft.Storage/storageAccounts/staging2501090040007252",
+		"groupId": "dfs",
+		"fqdns": [
+			"staging2501090040007252.dfs.core.windows.net"
+		]
+	}
+}
